@@ -1,4 +1,5 @@
 import getRandomNumbers from '../randomnumbers.js';
+import startGame from '../index.js'
 
 const descriptionGame = () => {
     const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -15,8 +16,6 @@ const brainEven = () => {
     return correctAnswer;
 };
 
-
-export {
-    brainEven,
-    descriptionGame
+export default () => {
+    startGame(brainEven, descriptionGame)
 };
