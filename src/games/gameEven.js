@@ -1,4 +1,4 @@
-import getRandomNumbers from '../randomnumbers.js';
+import { getRandomNumbers } from '../randomnumbers.js';
 import startGame from '../index.js'
 
 const descriptionGame = () => {
