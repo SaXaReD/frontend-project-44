@@ -7,7 +7,7 @@ const descriptionGame = () => {
 };
 
 const brainCalc = () => {
-    let randomNumbers = getRandomNumbers();
+    let randomNumbers = getRandomNumbers(1, 20);
     let randomSymbol = getRandomSymbol();
     let correctAnswer = 0;
     let question = `${randomNumbers[0]} ${randomSymbol} ${randomNumbers[1]}`;

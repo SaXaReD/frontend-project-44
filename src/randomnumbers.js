@@ -1,7 +1,7 @@
-export const getRandomNumbers = () => {
+export const getRandomNumbers = (min, max) => {
     const randomNumbers = [];
-    randomNumbers[0] = Math.round(Math.random(1) * 10) + 1;
-    randomNumbers[1] = Math.round(Math.random(1) * 10) + 1;
+    randomNumbers[0] = Math.round(Math.random(min) * max) + 1;
+    randomNumbers[1] = Math.round(Math.random(min) * max) + 1;
     return randomNumbers;
 };
 
