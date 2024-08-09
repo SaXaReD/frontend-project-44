@@ -17,7 +17,7 @@ const brainPrime = () => {
         }
     }
     isPrime === true ? correctAnswer = 'yes' : correctAnswer = 'no';
-    console.log('Question: ', randomNumber)
+    console.log(`Question: ${randomNumber}`)
     return correctAnswer;
 };
 

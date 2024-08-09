@@ -10,7 +10,7 @@ const brainGCD = () => {
     let firstNumber = getRandomNumbers(1, 100);
     let secondNumber = getRandomNumbers(1, 100);
     let correctAnswer = '';
-    console.log(`Question: `, firstNumber, secondNumber)
+    console.log(`Question: ${firstNumber} ${secondNumber}`)
     for (; secondNumber !== 0;) {
         let temp = secondNumber;
         secondNumber = firstNumber % secondNumber;

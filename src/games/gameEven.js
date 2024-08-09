@@ -12,7 +12,7 @@ const brainEven = () => {
     let correctAnswer = 'yes';
     randomNumbers % 2 === 0 ? isEven = true : isEven = false;
     isEven === true ? correctAnswer = 'yes' : correctAnswer = 'no';
-    console.log('Question: ', randomNumbers)
+    console.log(`Question: ${randomNumbers}`)
     return correctAnswer;
 };
 
