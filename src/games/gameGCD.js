@@ -7,9 +7,8 @@ const descriptionGame = () => {
 };
 
 const brainGCD = () => {
-    const randomNumbers = getRandomNumbers(1, 100);
-    let firstNumber = randomNumbers[0];
-    let secondNumber = randomNumbers[1];
+    let firstNumber = getRandomNumbers(1, 100);
+    let secondNumber = getRandomNumbers(1, 100);
     let correctAnswer = '';
     console.log(`Question: `, firstNumber, secondNumber)
     for (; secondNumber !== 0;) {

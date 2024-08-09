@@ -10,9 +10,9 @@ const brainEven = () => {
     const randomNumbers = getRandomNumbers(1, 100);
     let isEven = true;
     let correctAnswer = 'yes';
-    randomNumbers[0] % 2 === 0 ? isEven = true : isEven = false;
+    randomNumbers % 2 === 0 ? isEven = true : isEven = false;
     isEven === true ? correctAnswer = 'yes' : correctAnswer = 'no';
-    console.log('Question: ', randomNumbers[0])
+    console.log('Question: ', randomNumbers)
     return correctAnswer;
 };
 

@@ -7,23 +7,24 @@ const descriptionGame = () => {
 };
 
 const brainCalc = () => {
-    let randomNumbers = getRandomNumbers(1, 20);
+    let randomNumber1 = getRandomNumbers(1, 20);
+    let randomNumber2 = getRandomNumbers(1, 20);
     let randomSymbol = getRandomSymbol();
     let correctAnswer = 0;
-    let question = `${randomNumbers[0]} ${randomSymbol} ${randomNumbers[1]}`;
+    let question = `${randomNumber1} ${randomSymbol} ${randomNumber2}`;
     switch (randomSymbol) {
         case '*':
-            correctAnswer = randomNumbers[0] * randomNumbers[1];
+            correctAnswer = randomNumber1 * randomNumber2;
             break;
         case '+':
-            correctAnswer = randomNumbers[0] + randomNumbers[1];
+            correctAnswer = randomNumber1 + randomNumber2;
             break;
         case '-':
-            if (randomNumbers[0] > randomNumbers[1]) {
-                correctAnswer = randomNumbers[0] - randomNumbers[1];
+            if (randomNumber1 > randomNumber2) {
+                correctAnswer = randomNumber1 - randomNumber2;
             } else {
-                question = `${randomNumbers[1]} ${randomSymbol} ${randomNumbers[0]}`;
-                correctAnswer = randomNumbers[1] - randomNumbers[0];
+                question = `${randomNumber2} ${randomSymbol} ${randomNumber1}`;
+                correctAnswer = randomNumber2 - randomNumber2;
             }
             break;
     }
