@@ -8,3 +8,5 @@
 [![asciicast](https://asciinema.org/a/otOYj18QNZeJlw2lmDTtRYFsh.svg)](https://asciinema.org/a/otOYj18QNZeJlw2lmDTtRYFsh)
 ### Asciinema Brain-Progression
 [![asciicast](https://asciinema.org/a/Vb7muFDecFDVbaPwbwZvW0KiJ.svg)](https://asciinema.org/a/Vb7muFDecFDVbaPwbwZvW0KiJ)
+### Asciinema Brain-Prime
+[![asciicast](https://asciinema.org/a/452sgJiXqq1SLgtHrazsVZTDB.svg)](https://asciinema.org/a/452sgJiXqq1SLgtHrazsVZTDB)
