@@ -24,7 +24,7 @@ const brainCalc = () => {
                 correctAnswer = randomNumber1 - randomNumber2;
             } else {
                 question = `${randomNumber2} ${randomSymbol} ${randomNumber1}`;
-                correctAnswer = randomNumber2 - randomNumber2;
+                correctAnswer = randomNumber2 - randomNumber1;
             }
             break;
     }
