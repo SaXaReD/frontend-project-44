@@ -1,8 +1,5 @@
 export const getRandomNumbers = (min, max) => {
-    const randomNumbers = [];
-    randomNumbers[0] = Math.round(Math.random(min) * max) + 1;
-    randomNumbers[1] = Math.round(Math.random(min) * max) + 1;
-    return randomNumbers;
+    return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 export const getRandomSymbol = () => {
