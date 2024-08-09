@@ -8,10 +8,12 @@ const descriptionGame = () => {
 
 const brainEven = () => {
   const randomNumbers = getRandomNumbers(1, 100);
-  let isEven = true;
   let correctAnswer = 'yes';
-  randomNumbers % 2 === 0 ? isEven = true : isEven = false;
-  isEven === true ? correctAnswer = 'yes' : correctAnswer = 'no';
+  if (randomNumbers % 2 === 0) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
   console.log(`Question: ${randomNumbers}`);
   return correctAnswer;
 };

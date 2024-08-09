@@ -16,7 +16,11 @@ const brainPrime = () => {
       break;
     }
   }
-  isPrime === true ? correctAnswer = 'yes' : correctAnswer = 'no';
+  if (isPrime === true) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
   console.log(`Question: ${randomNumber}`);
   return correctAnswer;
 };
