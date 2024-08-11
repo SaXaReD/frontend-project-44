@@ -9,9 +9,9 @@ const descriptionGame = () => {
 const isEven = (number) => number % 2 === 0;
 
 const getEven = () => {
-  const num = getRandomNumber(1, 100);
-  const correctAnswer = isEven(num) ? 'yes' : 'no';
-  console.log(`Question: ${num}`);
+  const randomNumber = getRandomNumber(1, 100);
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+  console.log(`Question: ${randomNumber}`);
   return correctAnswer;
 };
 
