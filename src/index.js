@@ -1,20 +1,20 @@
 import readlineSync from 'readline-sync';
 import welcome from './cli.js';
 
-const startGame = (gameData, descriptionGame) => {
-  const name = welcome();
-  console.log(descriptionGame());
-  const maxGuesses = 3;
-  for (let correctGuesses = 0; correctGuesses < maxGuesses;) {
-    const correctAnswer = gameData();
-    const userGuess = readlineSync.question('Your answer: ');
-    if (userGuess === correctAnswer) {
-      console.log('Correct!');
-      correctGuesses += 1;
-    } else {
-      console.log(`'${userGuess}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+const roundCount = 3;
+const name = welcome();
+
+const startGame = (getGame, description) => {
+  console.log(description());
+  for (let i = 0; i < roundCount; i += 1) {
+    const correctAnswer = getGame();
+    const userInput = readlineSync.question('Your answer: ');
+    if (userInput !== correctAnswer) {
+      console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };

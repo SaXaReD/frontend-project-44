@@ -1,4 +1,4 @@
-import { getRandomNumbers } from '../randomnumbers.js';
+import getRandomNumbers from '../utils.js';
 import startGame from '../index.js';
 
 const descriptionGame = () => {
@@ -6,25 +6,24 @@ const descriptionGame = () => {
   return description;
 };
 
-const brainPrime = () => {
-  const randomNumber = getRandomNumbers(1, 100);
+const generatePrime = (number) => {
   let isPrime = true;
-  let correctAnswer = 'yes';
-  for (let i = 2; i < randomNumber; i += 1) {
-    if (randomNumber % i === 0) {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
       isPrime = false;
       break;
     }
   }
-  if (isPrime === true) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-  console.log(`Question: ${randomNumber}`);
+  return isPrime;
+};
+
+const getPrime = () => {
+  const num = getRandomNumbers(1, 100);
+  const correctAnswer = generatePrime(num) ? 'yes' : 'no';
+  console.log(`Question: ${num}`);
   return correctAnswer;
 };
 
 export default () => {
-  startGame(brainPrime, descriptionGame);
+  startGame(getPrime, descriptionGame);
 };

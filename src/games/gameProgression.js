@@ -1,7 +1,7 @@
-import { getRandomNumbers } from '../randomnumbers.js';
+import getRandomNumbers from '../utils.js';
 import startGame from '../index.js';
 
-const brainProgression = () => {
+const getProgression = () => {
   const arr1 = [];
   let question = '';
   const num = getRandomNumbers(1, 100);
@@ -25,5 +25,5 @@ const descriptionGame = () => {
 };
 
 export default () => {
-  startGame(brainProgression, descriptionGame);
+  startGame(getProgression, descriptionGame);
 };

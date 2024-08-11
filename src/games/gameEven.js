@@ -1,4 +1,4 @@
-import { getRandomNumbers } from '../randomnumbers.js';
+import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
 const descriptionGame = () => {
@@ -6,18 +6,15 @@ const descriptionGame = () => {
   return description;
 };
 
-const brainEven = () => {
-  const randomNumbers = getRandomNumbers(1, 100);
-  let correctAnswer = 'yes';
-  if (randomNumbers % 2 === 0) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-  console.log(`Question: ${randomNumbers}`);
+const isEven = (number) => number % 2 === 0;
+
+const getEven = () => {
+  const num = getRandomNumber(1, 100);
+  const correctAnswer = isEven(num) ? 'yes' : 'no';
+  console.log(`Question: ${num}`);
   return correctAnswer;
 };
 
 export default () => {
-  startGame(brainEven, descriptionGame);
+  startGame(getEven, descriptionGame);
 };

@@ -1,4 +1,4 @@
-import { getRandomNumbers } from '../randomnumbers.js';
+import getRandomNumbers from '../utils.js';
 import startGame from '../index.js';
 
 const descriptionGame = () => {
@@ -6,7 +6,7 @@ const descriptionGame = () => {
   return description;
 };
 
-const brainGCD = () => {
+const getGCD = () => {
   let firstNumber = getRandomNumbers(1, 100);
   let secondNumber = getRandomNumbers(1, 100);
   let correctAnswer = '';
@@ -21,5 +21,5 @@ const brainGCD = () => {
 };
 
 export default () => {
-  startGame(brainGCD, descriptionGame);
+  startGame(getGCD, descriptionGame);
 };
