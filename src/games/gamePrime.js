@@ -1,27 +1,21 @@
 import getRandomNumbers from '../utils.js';
 import startGame from '../index.js';
 
-const descriptionGame = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  return description;
-};
+const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const generatePrime = (number) => {
-  let isPrime = true;
+const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      isPrime = false;
-      break;
+      return false;
     }
   }
-  return isPrime;
+  return true;
 };
 
 const getPrime = () => {
-  const num = getRandomNumbers(1, 100);
-  const correctAnswer = generatePrime(num) ? 'yes' : 'no';
-  console.log(`Question: ${num}`);
-  return correctAnswer;
+  const number = getRandomNumbers(2, 100);
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  return [correctAnswer, number];
 };
 
 export default () => {

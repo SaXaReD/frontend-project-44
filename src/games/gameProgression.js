@@ -1,27 +1,29 @@
 import getRandomNumbers from '../utils.js';
 import startGame from '../index.js';
 
-const getProgression = () => {
-  const arr1 = [];
-  let question = '';
-  const num = getRandomNumbers(1, 100);
-  const num2 = getRandomNumbers(1, 5);
-  const random = getRandomNumbers(5, 10);
-  for (let i = 0; i < num2 * random; i += num2) {
-    arr1.push(num + i);
+const descriptionGame = 'What number is missing in the progression?';
+
+const generateProgression = (number, step, length) => {
+  const progression = [];
+  for (let i = 0; i < step * length; i += step) {
+    progression.push(number + i);
   }
-  const num1 = getRandomNumbers(1, arr1.length - 1);
-  const correctAnswer = arr1[num1];
-  const arr2 = arr1;
-  arr2[num1] = '..';
-  question = arr2.join(' ');
-  console.log(`Question: ${question}`);
-  return correctAnswer.toString();
+  const num2 = getRandomNumbers(1, progression.length - 1);
+  const result = progression[num2];
+  const hideNumberProgression = progression;
+  hideNumberProgression[num2] = '..';
+  return [result, hideNumberProgression];
 };
 
-const descriptionGame = () => {
-  const description = 'What number is missing in the progression?';
-  return description;
+const getProgression = () => {
+  let question = '';
+  const num1 = getRandomNumbers(1, 100);
+  const randomStep = getRandomNumbers(1, 5);
+  const randomLength = getRandomNumbers(5, 10);
+  const progression = generateProgression(num1, randomStep, randomLength);
+  const correctAnswer = progression[0];
+  question = progression[1].join(' ');
+  return [correctAnswer, question];
 };
 
 export default () => {
