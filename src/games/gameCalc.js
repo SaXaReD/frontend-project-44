@@ -1,24 +1,30 @@
-import getRandomNumbers from '../utils.js';
+import getRandomNum from '../utils.js';
 import startGame from '../index.js';
 
 const descriptionGame = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 
-const getOperator = (num1, num2) => {
-  const operator = operators[getRandomNumbers(0, 2)];
-  const minusPlus = operator === '-' ? num1 - num2 : num1 + num2;
-  const checkOperators = operator === '*' ? num1 * num2 : minusPlus;
-  return [checkOperators, operator];
+const calculateExpression = (num1, num2, operator) => {
+  switch (operator) {
+    case '*':
+      return num1 * num2;
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    default:
+      throw new Error(`Unknown operator: '${operator}'!`);
+  }
 };
 
-const getCalc = () => {
-  const num1 = getRandomNumbers(1, 20);
-  const num2 = getRandomNumbers(1, 20);
-  const expression = getOperator(num1, num2);
-  const correctAnswer = expression[0];
-  const question = `${num1} ${expression[1]} ${num2}`;
+const getRound = () => {
+  const num1 = getRandomNum(1, 20);
+  const num2 = getRandomNum(1, 20);
+  const operator = operators[getRandomNum(0, operators.length - 1)];
+  const correctAnswer = calculateExpression(num1, num2, operator);
+  const question = `${num1} ${operator} ${num2}`;
   return [correctAnswer, question];
 };
 
-export default () => startGame(getCalc, descriptionGame);
+export default () => startGame(getRound, descriptionGame);
